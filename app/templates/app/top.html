@@ -44,7 +44,9 @@
     </style>
 </head>
 <body>
-<form action="" method="GET">
+<!--这个位置的app:top 必须和 app/urls.py 里面的path('top/', views.top, name='top') 一样（都是top，名字不能错了）-->
+<form action="{% url 'app:top' %}" method="POST">
+    {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">送信</button>
 </form>
